@@ -1,6 +1,9 @@
 import regex as re
+import sys
+sys.path.append('../')
+from Timer.mytimer import performance
 
-with open('input', 'r') as f:
+with open(sys.argv[-1], 'r') as f:
     data = f.read().strip()
 
 num_dict = {
@@ -15,6 +18,7 @@ num_dict = {
     "nine": 9
 }
 
+@performance
 def first(fdata):
     result = 0
     count = 0
@@ -24,6 +28,7 @@ def first(fdata):
         count += 1
     return result, count
 
+@performance
 def second(fdata):
     result = 0
     count = 0
@@ -37,3 +42,5 @@ def second(fdata):
 if __name__ == '__main__':
     print(f'First: {first(data)}')
     print(f'Second: {second(data)}')
+
+# ~ py3 calibration_rework.py <name_of_input_file>
