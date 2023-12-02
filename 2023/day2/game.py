@@ -65,8 +65,3 @@ for line in raw:
     result += int(max(sorted["green"])) * int(max(sorted["red"])) * int(max(sorted["blue"]))
 
 print(f'Part 2: {result}')
-
-
-
-
-        
